@@ -80,3 +80,13 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 }
 
 ```
+
+
+
+
+* write to hard disk
+
+```
+sudo coreos-install -d /dev/sda -b 'http://10.10.16.218:8077'
+
+```
