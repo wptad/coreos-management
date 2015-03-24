@@ -67,8 +67,7 @@ write_files:
       Kind=bond
 
       [Bond]
-      Mode=4
-      MIIMonitorSec=100
+      Mode=1
   - path: /etc/systemd/network/30-setup-bond-ipv4-public.network
     permissions: 0644
     owner: root
@@ -82,4 +81,7 @@ write_files:
       DNS=114.114.114.114
 ```
 
-* REFER <>
+ * bonding model <http://blog.sina.com.cn/s/blog_89a8a72d01018kqf.html>
+ * <https://github.com/coreos/bugs/issues/36#issuecomment-79328829>
+ * bond <http://www.reversengineered.com/2014/08/21/setting-up-bonding-in-systemd/>
+ 
