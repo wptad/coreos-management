@@ -14,3 +14,9 @@ journalctl --system
 journalctl _COMM=sshd
 
 ```
+
+## coreos cloudinit log
+
+```
+journalctl _EXE=/usr/bin/coreos-cloudinit
+```
