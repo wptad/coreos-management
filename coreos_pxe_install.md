@@ -1,5 +1,8 @@
 #coreos pxe install
 
+* good example: <https://github.com/GoogleCloudPlatform/kubernetes/blob/9e5c0e3b3b9ca777a27f85300bd7375cb2a9306e/docs/getting-started-guides/coreos/bare_metal_offline.md>
+
+
 * TFTP TREE
 
 ```

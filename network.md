@@ -1,5 +1,7 @@
 # network
 
+## same subnet with host
+* <http://stackoverflow.com/questions/25529386/how-can-i-set-a-static-ip-address-in-a-docker-container>
 
 ## Bond example
 
