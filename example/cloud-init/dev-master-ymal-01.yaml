@@ -1,0 +1,39 @@
+#cloud-config
+#DEV master ymal
+hostname: core-dev-master
+ssh_authorized_keys:
+  - ssh-rsa <your key here>
+
+coreos:
+  etcd2:
+    name: etcd_dev
+    discovery: https://discovery.etcd.io/bbce0aaca170e2ad97b41547cbe421b6
+    initial-advertise-peer-urls: http://<MASTER IP HERE>:2380
+    listen-peer-urls: http://<MASTER IP HERE>:2380
+    listen-client-urls: http://<MASTER IP HERE>:2379,http://127.0.0.1:2379
+    advertise-client-urls: http://<MASTER IP HERE>:2379
+  fleet:
+    metadata: "role=services,cabinet=one"
+  units:
+    - name: etcd2.service
+      command: start
+    - name: fleet.service
+      command: start
+write_files:
+  - path: /etc/resolv.conf
+    permissions: 0644
+    owner: root
+    content: |
+      search localhost
+      nameserver 8.8.8.8
+  - path: /etc/ssh/sshd_config
+    permissions: 0600
+    owner: root:root
+    content: |
+      # Use most defaults for sshd configuration.
+      UsePrivilegeSeparation sandbox
+      Subsystem sftp internal-sftp
+      ClientAliveInterval 180
+      UseDNS no
+      PermitRootLogin no
+

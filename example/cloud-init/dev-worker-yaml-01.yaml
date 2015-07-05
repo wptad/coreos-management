@@ -1,0 +1,44 @@
+#cloud-config
+## dev worker yaml file example
+hostname: core-dev-worker-1
+ssh_authorized_keys:
+  - ssh-rsa <YOUR KEY HERE>
+coreos:
+  fleet:
+    metadata: "role=worker,cabinet=two,disk=spinning"
+    etcd_servers: "http://<YOUR IP HERE>:2379"
+  locksmith:
+    endpoint: "http://<YOUR IP HERE>:2379"
+  units:
+    - name: etcd.service
+      mask: true
+    - name: fleet.service
+      command: start
+write_files:
+  - path: /etc/resolv.conf
+    permissions: 0644
+    owner: root
+    content: |
+      search localhost
+      nameserver 10.11.1.1
+  - path: /etc/profile.d/etcdctl.sh
+    permissions: 0644
+    owner: core
+    content: |
+      export ETCDCTL_PEERS="http://<YOUR IP HERE>:2379"
+  - path: /etc/profile.d/fleetctl.sh
+    permissions: 0644
+    owner: core
+    content: |
+      export FLEETCTL_ENDPOINT=unix:///var/run/fleet.sock
+      export FLEETCTL_EXPERIMENTAL_API=true
+  - path: /etc/ssh/sshd_config
+    permissions: 0600
+    owner: root:root
+    content: |
+      # Use most defaults for sshd configuration.
+      UsePrivilegeSeparation sandbox
+      Subsystem sftp internal-sftp
+      ClientAliveInterval 180
+      UseDNS no
+      PermitRootLogin no

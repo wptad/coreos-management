@@ -24,5 +24,3 @@
 openssl passwd -1
 
 ```
-
-

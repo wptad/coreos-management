@@ -29,3 +29,6 @@ update_engine_client -check_for_update
 journalctl -fu update-engine
 
 ```
+
+
+REF <http://www.linuxidc.com/Linux/2015-04/116081.htm>
