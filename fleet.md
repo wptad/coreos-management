@@ -22,3 +22,8 @@ ExecStop=/usr/bin/docker kill redis-1
 [X-Fleet] 
 Global=true
 ```
+
+
+### DOC
+
+REFER: <http://duffqiu.github.io/blog/2015/07/25/fleet-ha-service-trap/>
