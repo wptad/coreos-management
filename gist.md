@@ -14,3 +14,18 @@ http://ju.outofmemory.cn/entry/112616
  mount -o subvol=root /dev/sda9 /mnt/
  
 ```
+
+
+
+# Error from server: no kind "Service" is registered for version "v1beta1"
+
+
+```
+
+$ etcdctl get /registry/namespaces/default
+{"kind":"Namespace","id":"default","uid":"8b05a41a-c633-11e4-be1c-fa163e837eb3","creationTimestamp":"2015-03-09T08:09:00Z","apiVersion":"v1beta1","spec":{},"status":{}}
+$ etcdctl rm --recursive /registry
+$ etcdctl get /registry/namespaces/default
+{"kind":"Namespace","apiVersion":"v1","metadata":{"name":"default","uid":"530e001a-1329-11e5-a04e-fa163e837eb3","creationTimestamp":"2015-06-15T06:39:51Z"},"spec":{"finalizers":["kubernetes"]},"status":{"phase":"Active"}}
+
+```
