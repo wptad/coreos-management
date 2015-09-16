@@ -21,6 +21,8 @@ REBOOT_STRATEGY=off
 
 ```
 update_engine_client -check_for_update
+journalctl -fu update-engine
+
 ```
 
 ### log
