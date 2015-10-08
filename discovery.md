@@ -3,10 +3,11 @@
 ### Set custom discovery services
 
  
-* set host ip for etcd
+* run etcd service
 
 ```
-export HostIP="192.168.0.2"
+# set host ip for etcd, replace your own host IP before run it.
+export HostIP="x.x.x.x"
  
 docker run -d -v /usr/share/ca-certificates/:/etc/ssl/certs -p 4001:4001 -p 2380:2380 -p 2379:2379 \
  --name etcd quay.io/coreos/etcd \
