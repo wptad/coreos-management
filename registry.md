@@ -6,7 +6,7 @@
 
 ```
 [Service]
-Environment='DOCKER_OPTS=--insecure-registry="10.11.0.0/16" --registry-mirror=http://docker.yunpro.cn'
+Environment='DOCKER_OPTS=--insecure-registry="10.11.0.0/16" --registry-mirror=http://REGISTRY_MIRROR_COM'
 ```
 
 
