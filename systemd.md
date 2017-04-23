@@ -24,6 +24,6 @@ systemctl show-environment
 systemctl   daemon-reexec 
 ```
 
-Refer [stemd-system.conf](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html)
-
+* Refer [stemd-system.conf](https://www.freedesktop.org/software/systemd/man/systemd-system.conf.html)
+* Refer [using environment variables in systemd units](https://coreos.com/os/docs/latest/using-environment-variables-in-systemd-units.html)
 * [CHAPTER 6. MANAGING SERVICES WITH SYSTEMD](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/chap-Managing_Services_with_systemd.html)
