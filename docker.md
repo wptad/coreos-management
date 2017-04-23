@@ -13,11 +13,11 @@ Requires=docker.service
 [Service]
 TimeoutStartSec=0
 ExecStartPre=-/usr/bin/docker rm example
-ExecStart=/usr/bin/docker run \\
-    --name example \\
-    --env-file /data/project/production.env \\
-    -v /etc/localtime:/etc/localtime:ro \\
-    --log-driver=none \\
+ExecStart=/usr/bin/docker run \
+    --name example \
+    --env-file /data/project/production.env \
+    -v /etc/localtime:/etc/localtime:ro \
+    --log-driver=none \
     example/example:latest
 ExecStop=/usr/bin/docker kill example
 Restart=always
