@@ -1,4 +1,4 @@
-##systemd
+# systemd
 
 ### Global Environment
 config file will set default environment variables for all systemd units.
