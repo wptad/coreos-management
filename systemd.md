@@ -1,4 +1,4 @@
-#systemd
+##systemd
 
 ### Global Environment
 
@@ -6,7 +6,8 @@
 config file will set default environment variables for all systemd units.
 ```
 [Manager]
-DefaultEnvironment=DEFAULT_IPV4=192.168.10.51
+DefaultEnvironment=DEFAULT_IPV4=192.168.10.51 
+DefaultEnvironment="VAR1=word1 word2" VAR2=word3 "VAR3=word 5 6"
 ```
 ### User Environment
 set environment variables for all users logged in Container Linux. 
