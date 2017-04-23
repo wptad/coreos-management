@@ -1,9 +1,8 @@
 ##systemd
 
 ### Global Environment
-
-* /etc/systemd/system.conf.d/10-default-env.conf
 config file will set default environment variables for all systemd units.
+* `/etc/systemd/system.conf.d/10-default-env.conf`
 ```
 [Manager]
 DefaultEnvironment=DEFAULT_IPV4=192.168.10.51 
@@ -11,7 +10,7 @@ DefaultEnvironment="VAR1=word1 word2" VAR2=word3 "VAR3=word 5 6"
 ```
 ### User Environment
 set environment variables for all users logged in Container Linux. 
-* /etc/profile.env
+* `/etc/profile.env`
 ```
 export HTTP_PROXY=http://192.168.0.1:3128
 ```
