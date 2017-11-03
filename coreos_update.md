@@ -20,6 +20,9 @@ REBOOT_STRATEGY=off
 ### Manually Check
 
 ```
+systemctl daemon-reload
+systemctl restart update-engine
+
 update_engine_client -check_for_update
 journalctl -fu update-engine
 
