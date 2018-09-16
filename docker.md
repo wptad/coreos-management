@@ -1,5 +1,18 @@
 # docker
 
+## how to fix aliyun storage problem
+* from https://github.com/coreos/bugs/issues/2340
+
+```
+# fix wrong driver
+echo '{ "storage-driver": "devicemapper" }' | sudo tee /etc/docker/daemon.json
+sudo systemctl restart docker.service
+
+# fix aliyun buggy selinux
+sudo sed -i 's/SELINUXTYPE=mcs/SELINUXTYPE=targeted/' /etc/selinux/config
+
+
+```
 
 ## env-file
 
