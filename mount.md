@@ -21,6 +21,10 @@ Before=docker.service
 What=/dev/sda1
 Where=/hdd1
 Type=ext4
+Options=defaults
+
+[Install]
+WantedBy=multi-user.target
 
 ```
 
