@@ -45,3 +45,9 @@ Options=bind
 [Install] 
 WantedBy=multi-user.target
 ```
+
+## write empty file
+
+```
+dd if=/dev/zero of=empty bs=1M count=8000
+```
