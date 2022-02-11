@@ -66,5 +66,25 @@ WantedBy=timers.target
 systemctl enable --now mysql-backup-full.timer
 systemctl enable --now mysql-backup-full.service
 systemctl start mysql-backup-full.service
+systemctl start mysql-backup-full.timer
 systemctl list-timers --all
 ```
+
+OnCalender values: 
+```
+minutely
+hourly
+daily
+monthly
+weekly
+yearly
+quarterly
+semiannually
+```
+
+- [Calendar Usage](https://www.freedesktop.org/software/systemd/man/systemd.time.html)
+- [Systemd 入门教程：实战篇](https://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-part-two.html)
+- [Systemd 定时器教程](http://www.ruanyifeng.com/blog/2018/03/systemd-timer.html)
+- [Systemd 定时器教程](https://www.cnblogs.com/chengkanghua/p/12708584.html)
+- [Creating A Timer](https://linuxhint.com/cron_systemd_timer/)
+- [Timers (简体中文)](https://wiki.archlinux.org/title/Systemd_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)/Timers_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
