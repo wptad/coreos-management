@@ -7,7 +7,7 @@ Description=OpenSSH Server Socket
 Conflicts=sshd.service
 
 [Socket]
-ListenStream=54321
+ListenStream=2222
 Accept=yes
 
 [Install]
@@ -17,4 +17,12 @@ EOF
 
 systemctl restart sshd.socket
 
+```
+
+
+
+```
+sudo vi /etc/ssh/sshd_config
+
+Port 2222
 ```
